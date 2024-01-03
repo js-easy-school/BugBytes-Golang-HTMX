@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 	"text/template"
+	"time"
+
 	// "io"
 	"log"
 	"net/http"
@@ -33,7 +35,8 @@ func main() {
 	h2 := func (w http.ResponseWriter, r *http.Request) {
 		// log.Print("HTMX request received")
 		// log.Print(r.Header.Get("HX-Request"))
-
+		
+		time.Sleep(1 * time.Second)
 		title := r.PostFormValue("title")
 		director := r.PostFormValue("director")
 		htmlStr := fmt.Sprintf("<li class='list-group-item bg-primary text-white'>%s - %s</li>", title, director)

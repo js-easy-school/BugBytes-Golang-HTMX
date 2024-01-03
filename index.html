@@ -39,8 +39,11 @@
                     <label for="film-director">Director</label>
                     <input type="text" name="director" id="film-director" class="form-control" />
                 </div>
-
-                <button type="submit" class="btn btn-primary">Submit</button>
+                
+                <button type="submit" class="btn btn-primary">
+                    <span class="spinner-border spinner-border-sm htmx-indicator" id="spinner" role="status" aria-hidden="true"></span>
+                    Submit
+                </button>
             </form>
         </div>
 
