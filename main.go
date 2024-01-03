@@ -31,8 +31,12 @@ func main() {
 	}
 
 	h2 := func (w http.ResponseWriter, r *http.Request) {
-		log.Print("HTMX request received")
-		log.Print(r.Header.Get("HX-Request"))
+		// log.Print("HTMX request received")
+		// log.Print(r.Header.Get("HX-Request"))
+		title := r.PostFormValue("title")
+		director := r.PostFormValue("director")
+		fmt.Println(title)
+		fmt.Println(director)
 	}
 
 	http.HandleFunc("/", h1)
