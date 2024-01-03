@@ -1,0 +1,1 @@
+Код повторил по уроку BugBytes -> https://www.youtube.com/watch?v=F9H6vYelYyU
