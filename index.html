@@ -22,7 +22,9 @@
 
             <ul class="list-group fs-5 me-5" id="film-list">
                 {{ range .Films }}
+                    {{ block "firm-list-element" .}}
                     <li class="list-group-item bg-primary text-white">{{ .Title }} - {{ .Director }}</li>
+                    {{ end }}
                 {{ end }}
             </ul>
         </div>
@@ -39,7 +41,7 @@
                     <label for="film-director">Director</label>
                     <input type="text" name="director" id="film-director" class="form-control" />
                 </div>
-                
+
                 <button type="submit" class="btn btn-primary">
                     <span class="spinner-border spinner-border-sm htmx-indicator" id="spinner" role="status" aria-hidden="true"></span>
                     Submit
