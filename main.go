@@ -33,11 +33,18 @@ func main() {
 	h2 := func (w http.ResponseWriter, r *http.Request) {
 		// log.Print("HTMX request received")
 		// log.Print(r.Header.Get("HX-Request"))
+
 		title := r.PostFormValue("title")
 		director := r.PostFormValue("director")
-		fmt.Println(title)
-		fmt.Println(director)
+		htmlStr := fmt.Sprintf("<li class='list-group-item bg-primary text-white'>%s - %s</li>", title, director)
+		tmpl, _ := template.New("t").Parse(htmlStr)
+		tmpl.Execute(w, nil)
+
+		// fmt.Println(title)
+		// fmt.Println(director)
 	}
+
+
 
 	http.HandleFunc("/", h1)
 	http.HandleFunc("/add-film/", h2)
